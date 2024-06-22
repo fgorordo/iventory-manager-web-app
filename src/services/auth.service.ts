@@ -16,7 +16,7 @@ export const getCredentialsFromRefresh = () => {
 
 export const logoutFromServer = () => {
     const controller = new AbortController();
-    const request = privateAuthApiService.post<void>("/logout", null, {signal: controller.signal});
+    const request = privateAuthApiService.post<void>("/auth/logout", null, {signal: controller.signal});
 
     return { controller, request }
 }

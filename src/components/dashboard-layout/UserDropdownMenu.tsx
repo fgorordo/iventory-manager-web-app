@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import userPlaceholderImage from "@/assets/user-placeholder.jpg";
 import { useAuthStore } from '../../hooks/useAuthStore';
+import { LogOut } from "lucide-react";
 
 export const UserDropdownMenu = () => {
 
@@ -21,12 +22,13 @@ export const UserDropdownMenu = () => {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuLabel>Jhon Doe</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>Settings</DropdownMenuItem>
-                <DropdownMenuItem>Support</DropdownMenuItem>
+                <DropdownMenuLabel className="text-xs font-normal">Mi cuenta</DropdownMenuLabel>
+                <DropdownMenuItem>Editar informacion</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={startOnLogout}>Logout</DropdownMenuItem>
+                <DropdownMenuLabel className="text-xs font-normal">Inicio de sesión</DropdownMenuLabel>
+                <DropdownMenuItem onClick={startOnLogout} className="text-destructive hover:!text-destructive text-xs">Cerrar sesión </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     )
