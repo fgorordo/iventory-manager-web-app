@@ -1,1 +1,1 @@
-export * from "./AuthGuard";
+export * from "./auth.guard.tsx";

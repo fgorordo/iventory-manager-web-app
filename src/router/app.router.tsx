@@ -1,19 +1,17 @@
 import { AuthGuard } from "@/guards";
-import { AuthPage, CustomersPage, InventoryPage, OrdersPage, ProductsPage, UsersPage, WharehousesPage } from "@/pages";
-
-import { TypographyH1, TypographyMuted } from "@/components/common/typography";
-import { DashboardLayout, RootLayoutWithOutlet } from "@/layouts";
+import { DashboardLayout, RootLayout } from "@/layouts";
 import { RouteObject, createBrowserRouter } from "react-router-dom";
 import { PrivateRoutesV1, PublicRoutesV1 } from "@/models/routes";
+import { AuthPage, UsersPage } from "@/pages";
 
 
 const PublicRouterV1: RouteObject  = {
-    element: <TypographyH1>Landing Page</TypographyH1>,
+    element: <h1>Landing Page</h1>,
     path: PublicRoutesV1.LANDING_PAGE
 }
 
 const AppRouterV1:RouteObject = {
-    element: <RootLayoutWithOutlet />,
+    element: <RootLayout />,
     children: [
         {
             path: PublicRoutesV1.AUTH,
@@ -27,27 +25,27 @@ const AppRouterV1:RouteObject = {
                     children: [
                         {
                             path: PrivateRoutesV1.DASHBOARD,
-                            element:<TypographyMuted>Hello from /dashboard</TypographyMuted>
+                            element:<span>Hello from /dashboard</span>
                         },
                         {
                             path: PrivateRoutesV1.PRODUCTS,
-                            element: <ProductsPage />
+                            element: <span>Product Page</span>
                         },
                         {
                             path: PrivateRoutesV1.INVENTORY,
-                            element: <InventoryPage />
+                            element: <span>Inventory Page</span>
                         },
                         {
                             path: PrivateRoutesV1.WHAREHOUSES,
-                            element: <WharehousesPage />
+                            element: <span>Wharehouse Page</span>
                         },
                         {
                             path: PrivateRoutesV1.CUSTOMERS,
-                            element: <CustomersPage />
+                            element: <span>Customers Page</span>
                         },
                         {
                             path: PrivateRoutesV1.ORDERS,
-                            element: <OrdersPage />
+                            element: <span>Orders Page</span>
                         },
                         {
                             path: PrivateRoutesV1.USERS,
@@ -55,11 +53,11 @@ const AppRouterV1:RouteObject = {
                         },
                         {
                             path: PrivateRoutesV1.SETTINGS,
-                            element:<TypographyMuted>Hello from /settings</TypographyMuted>
+                            element:<span>Hello from /settings</span>
                         },
                         {
                             path: PrivateRoutesV1.HELP,
-                            element:<TypographyMuted>Hello from /help</TypographyMuted>
+                            element:<span>Hello from /help</span>
                         }
                     ],
                 },
