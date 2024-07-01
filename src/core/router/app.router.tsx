@@ -29,6 +29,14 @@ export const appRoutesV1 = createBrowserRouter([
                     {
                         path: "/dashboard/users",
                         element: <><h1 className="text-xl">Dashboard - User</h1><hr /></>,
+                    },
+                    {
+                        path: "/dashboard/products",
+                        element: <><h1 className="text-xl">Dashboard - Products</h1><hr /></>,
+                    },
+                    {
+                        path: "/dashboard/inventory",
+                        element: <><h1 className="text-xl">Dashboard - Inventory</h1><hr /></>,
                     }
                 ],
             }
